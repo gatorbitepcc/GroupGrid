@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group Grid - Event Planning Made Easy</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Make sure styles.css is in the same directory -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <div class="logo-box">
+                <span class="logo">Group Grid</span>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Features</a></li>
-                <li><a href="#">Pricing</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
@@ -28,25 +31,39 @@
         </section>
 
         <section class="about">
-            <h2>Why Group Grid?</h2>
-            <p>Group Grid allows teams to seamlessly plan events, track tasks, and sync schedules in one place. It's more than just a calendar — it's your team’s hub for collaboration!</p>
+            <div class="container">
+                <h2>Why Group Grid?</h2>
+                <p>Group Grid allows teams to seamlessly plan events, track tasks, and sync schedules in one place. It's more than just a calendar — it's your team’s hub for collaboration!</p>
+            </div>
         </section>
 
         <section class="features">
-            <h2>Key Features</h2>
-            <ul>
-                <li>Real-time Collaboration</li>
-                <li>Advanced Event Scheduling</li>
-                <li>Task Management & Reminders</li>
-                <li>Customizable Views & Layouts</li>
-            </ul>
+            <div class="container">
+                <h2>Key Features</h2>
+                <div class="feature-cards">
+                    <div class="card">
+                        <h3>Real-time Collaboration</h3>
+                        <p>Collaborate seamlessly in real-time with your team to manage events and tasks.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Advanced Event Scheduling</h3>
+                        <p>Advanced scheduling features that help you plan events with precision and flexibility.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Task Management & Reminders</h3>
+                        <p>Keep track of tasks and receive reminders to stay on top of your deadlines.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Group Grid. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Group Grid. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Make sure script.js is in the same directory -->
 </body>
 </html>
