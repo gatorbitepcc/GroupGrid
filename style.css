@@ -1,4 +1,4 @@
-/* Resetting some default styles */
+/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,96 +7,111 @@
 
 /* Body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
 /* Header styling */
 header {
-    background-color: #0044cc;
-    padding: 20px;
+    background-color: #2f2f2f;
+    padding: 20px 0;
     color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     list-style-type: none;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f0c674; /* Yellow hover color */
 }
 
 /* Hero section styling */
 .hero {
-    background-color: #007bff;
+    background-color: #333;
     color: white;
-    height: 300px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-image: linear-gradient(to bottom right, #333, #666);
 }
 
 .hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+    font-size: 3.5em;
+    margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 20px;
 }
 
 .hero button {
-    background-color: #ffcc00;
+    background-color: #f0c674; /* Yellow */
     border: none;
     padding: 15px 30px;
     font-size: 1.2em;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .hero button:hover {
-    background-color: #ff9900;
+    background-color: #e0a600; /* Darker yellow */
 }
 
 /* About section styling */
 .about {
-    background-color: white;
-    padding: 40px;
+    background-color: #fff;
+    padding: 60px 20px;
     text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .about h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 20px;
+    color: #2f2f2f;
 }
 
 .about p {
     font-size: 1.2em;
     max-width: 800px;
     margin: 0 auto;
+    color: #666;
 }
 
 /* Features section styling */
 .features {
-    background-color: #f4f4f4;
-    padding: 40px;
+    background-color: #f8f8f8;
+    padding: 60px 20px;
     text-align: center;
 }
 
 .features h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .features ul {
@@ -106,14 +121,32 @@ nav ul li a {
 
 .features ul li {
     font-size: 1.2em;
-    margin: 10px 0;
+    margin: 15px 0;
+    color: #444;
 }
 
 /* Footer styling */
 footer {
-    background-color: #333;
+    background-color: #2f2f2f;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     margin-top: 40px;
+    font-size: 1em;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+    .about h2, .features h2 {
+        font-size: 2em;
+    }
+    .features ul li {
+        font-size: 1.1em;
+    }
 }
