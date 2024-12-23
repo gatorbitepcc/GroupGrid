@@ -1,4 +1,7 @@
 /* Global Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,21 +9,25 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    color: #333;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #ffffff;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 /* Header styles */
 header {
-    background-color: #333;
-    padding: 20px 0;
+    
+    background-color: #ffffff;
+    padding: 0px 0;
     color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
     position: sticky;
     top: 0;
     width: 100%;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,19 +35,36 @@ header {
 
 .logo-box {
     display: flex;
+    color: black;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #f0c674, #666);
-    padding: 10px 20px;
+    text-align: center;
+    background: white;
+    padding: 2.5px 5px;
+    margin-top: 12px; /* Move down */
+    margin-left: 64px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    
+    /*outline: 1px solid rgb(94, 109, 208);*/
+    
 }
 
+.logo-box a {
+    text-decoration: none;
+}
 .logo {
-    font-size: 1.8em;
+    font-family: "Poppins", serif;
+    font-style: normal;
+    text-align: center;
+    padding-left: 2px;
+    justify-content: center;
+    align-items: center;
+    text-decoration:none !important;
+    font-size: 	1.6em;
     font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
+    margin-bottom: 50x;
+    color: #000000;
+    
 }
 
 nav ul {
@@ -55,7 +79,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
@@ -65,38 +89,84 @@ nav ul li a {
 nav ul li a:hover {
     color: #f0c674; /* Yellow hover */
 }
+/* Header -Buttons(I made them-dabee)i wanna eat im hungry*/
+.nav-buttons {
+    display: flex;            /* Align buttons in a row */
+    gap: 20px;                /* Space between the buttons */
+    margin-right: auto;
+    justify-content: space-between; /* Space between logo, nav-links, and buttons */
+    align-items: center;            /* Vertically center items */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Style the individual buttons */
+.nav-buttons button {
+    
+    background-color: #ffffff; /* white background for buttons */
+    color: rgb(94, 109, 208);              /* blue text */
+    padding: 10px 20px;        /* Padding inside the button */
+    border: none;              /* Remove default button border */
+    border-radius: 15px;        /* Rounded corners */
+    font-size: 16px;           /* Text size */
+    cursor: pointer;          /* Change cursor to pointer on hover */
+    outline: 2px solid rgb(94, 109, 208);
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover effect */
+.nav-buttons button:hover {
+    background-color: rgb(94, 109, 208); /*blue inverted*/
+    outline: 2px solid #ffffff;  /* Slightly enlarge the button */
+    color: #fff;
+}
+
+
 
 /* Hero Section */
 .hero {
-    background-color: #333;
-    color: white;
+    background-color: #fafafa;
+    color: rgb(0, 0, 0);
     height: 100vh;
+    padding: 180px 0 0 100px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-image: linear-gradient(to bottom right, #333, #666);
-    padding: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: flex-start;
+    
+    background-image: linear-gradient(to bottom right, #ffffff, #ffffff);
+    
 }
 
-.hero-content h1 {
-    font-size: 4em;
-    margin-bottom: 20px;
+.hero-content h2 {
+    font-family: "Poppins", serif;
+    color: rgb(30, 4, 91);
+    font-style: normal;
+    font-size: 2.4em;
+    margin-bottom: 5px;
 }
 
 .hero-content p {
-    font-size: 1.4em;
-    margin-bottom: 30px;
+    font-family: "Poppins", serif;
+    
+    font-style: normal;
+    font-size: 1.3em;
+    margin-bottom: 10px;
 }
 
 .hero button {
-    background-color: #f0c674;
-    color: white;
+    background: linear-gradient(to right, #3d25c2, #d2406e);
+    color:#fff;
     border: none;
+    font-family: "Poppins", serif;
+    
+    font-style: normal;
     padding: 15px 40px;
     font-size: 1.3em;
+    
     cursor: pointer;
-    border-radius: 25px;
+    border-radius: 30px;
     transition: background-color 0.3s ease;
 }
 
