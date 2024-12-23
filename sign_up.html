@@ -27,7 +27,7 @@
             apiKey: "AIzaSyCR0JQmxA3j3T9h0qSZEvp3GqSzLrnvjbs",
             authDomain: "groupgridsignupdatabase.firebaseapp.com",
             projectId: "groupgridsignupdatabase",
-            storageBucket: "groupgridsignupdatabase.firebasestorage.app",
+            storageBucket: "groupgridsignupdatabase.appspot.com",
             messagingSenderId: "636582840816",
             appId: "1:636582840816:web:5a110540b4655f5f0fb535",
             measurementId: "G-SLF44XGTKR"
@@ -45,16 +45,29 @@
         const googleBtn = document.getElementById('google-btn');
         const messageDiv = document.getElementById('message');
 
+        // Helper function to display messages
+        function displayMessage(message) {
+            messageDiv.textContent = message;
+            messageDiv.style.color = 'red';
+        }
+
         // Sign up with Email/Password
         signupBtn.addEventListener('click', () => {
             const email = emailInput.value;
             const password = passwordInput.value;
+
+            if (!email || !password) {
+                displayMessage('Please enter both email and password.');
+                return;
+            }
+
             auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
-                    messageDiv.textContent = `User signed up: ${userCredential.user.email}`;
+                    displayMessage(`User signed up: ${userCredential.user.email}`);
+                    messageDiv.style.color = 'green';
                 })
                 .catch((error) => {
-                    messageDiv.textContent = `Error: ${error.message}`;
+                    displayMessage(`Error: ${error.message}`);
                 });
         });
 
@@ -62,24 +75,33 @@
         loginBtn.addEventListener('click', () => {
             const email = emailInput.value;
             const password = passwordInput.value;
+
+            if (!email || !password) {
+                displayMessage('Please enter both email and password.');
+                return;
+            }
+
             auth.signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
-                    messageDiv.textContent = `User logged in: ${userCredential.user.email}`;
+                    displayMessage(`User logged in: ${userCredential.user.email}`);
+                    messageDiv.style.color = 'green';
                 })
                 .catch((error) => {
-                    messageDiv.textContent = `Error: ${error.message}`;
+                    displayMessage(`Error: ${error.message}`);
                 });
         });
 
         // Log in with Google
         googleBtn.addEventListener('click', () => {
             const provider = new firebase.auth.GoogleAuthProvider();
+
             auth.signInWithPopup(provider)
                 .then((result) => {
-                    messageDiv.textContent = `User signed in with Google: ${result.user.email}`;
+                    displayMessage(`User signed in with Google: ${result.user.email}`);
+                    messageDiv.style.color = 'green';
                 })
                 .catch((error) => {
-                    messageDiv.textContent = `Error: ${error.message}`;
+                    displayMessage(`Error: ${error.message}`);
                 });
         });
     </script>
