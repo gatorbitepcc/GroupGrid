@@ -63,7 +63,7 @@
             auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     displayMessage(`User signed up: ${userCredential.user.email}`, false);
-                    window.location.href = 'login.html'; // Redirect to login.html for email/password login
+                    window.location.href = 'index.html'; // Redirect to index.html for email/password login
                 })
                 .catch((error) => {
                     displayMessage(`Error: ${error.message}`);
