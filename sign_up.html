@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Auth App</title>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
+    <link rel="stylesheet" href="sign_up.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up / Log In</h1>
+        <div class="form-container">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="signup-btn">Sign Up</button>
+            <button id="login-btn">Log In</button>
+            <button id="google-btn">Continue with Google</button>
+        </div>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCR0JQmxA3j3T9h0qSZEvp3GqSzLrnvjbs",
+            authDomain: "groupgridsignupdatabase.firebaseapp.com",
+            projectId: "groupgridsignupdatabase",
+            storageBucket: "groupgridsignupdatabase.firebasestorage.app",
+            messagingSenderId: "636582840816",
+            appId: "1:636582840816:web:5a110540b4655f5f0fb535",
+            measurementId: "G-SLF44XGTKR"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // DOM Elements
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const signupBtn = document.getElementById('signup-btn');
+        const loginBtn = document.getElementById('login-btn');
+        const googleBtn = document.getElementById('google-btn');
+        const messageDiv = document.getElementById('message');
+
+        // Sign up with Email/Password
+        signupBtn.addEventListener('click', () => {
+            const email = emailInput.value;
+            const password = passwordInput.value;
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    messageDiv.textContent = `User signed up: ${userCredential.user.email}`;
+                })
+                .catch((error) => {
+                    messageDiv.textContent = `Error: ${error.message}`;
+                });
+        });
+
+        // Log in with Email/Password
+        loginBtn.addEventListener('click', () => {
+            const email = emailInput.value;
+            const password = passwordInput.value;
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    messageDiv.textContent = `User logged in: ${userCredential.user.email}`;
+                })
+                .catch((error) => {
+                    messageDiv.textContent = `Error: ${error.message}`;
+                });
+        });
+
+        // Log in with Google
+        googleBtn.addEventListener('click', () => {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider)
+                .then((result) => {
+                    messageDiv.textContent = `User signed in with Google: ${result.user.email}`;
+                })
+                .catch((error) => {
+                    messageDiv.textContent = `Error: ${error.message}`;
+                });
+        });
+    </script>
+</body>
+</html>
