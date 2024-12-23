@@ -1,88 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firebase Auth App</title>
-    <!-- Use compatibility versions of Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
-    <link rel="stylesheet" href="sign_up.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Sign Up / Log In</h1>
-        <div class="form-container">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button id="signup-btn">Sign Up</button>
-            <button id="google-btn">Continue with Google</button>
-        </div>
-        <div id="message"></div>
-    </div>
-
-    <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCR0JQmxA3j3T9h0qSZEvp3GqSzLrnvjbs",
-            authDomain: "groupgridsignupdatabase.firebaseapp.com",
-            projectId: "groupgridsignupdatabase",
-            storageBucket: "groupgridsignupdatabase.appspot.com",
-            messagingSenderId: "636582840816",
-            appId: "1:636582840816:web:5a110540b4655f5f0fb535",
-            measurementId: "G-SLF44XGTKR"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-
-        // DOM Elements
-        const emailInput = document.getElementById('email');
-        const passwordInput = document.getElementById('password');
-        const signupBtn = document.getElementById('signup-btn');
-        const googleBtn = document.getElementById('google-btn');
-        const messageDiv = document.getElementById('message');
-
-        // Helper function to display messages
-        function displayMessage(message, isError = true) {
-            messageDiv.textContent = message;
-            messageDiv.style.color = isError ? 'red' : 'green';
-        }
-
-        // Sign up with Email/Password
-        signupBtn.addEventListener('click', () => {
-            const email = emailInput.value;
-            const password = passwordInput.value;
-
-            if (!email || !password) {
-                displayMessage('Please enter both email and password.');
-                return;
-            }
-
-            auth.createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    displayMessage(`User signed up: ${userCredential.user.email}`, false);
-                    window.location.href = 'login.html'; // Redirect to login.html for email/password login
-                })
-                .catch((error) => {
-                    displayMessage(`Error: ${error.message}`);
-                });
-        });
-
-        // Log in with Google
-        googleBtn.addEventListener('click', () => {
-            const provider = new firebase.auth.GoogleAuthProvider();
-
-            auth.signInWithPopup(provider)
-                .then((result) => {
-                    displayMessage(`User signed in with Google: ${result.user.email}`, false);
-                    window.location.href = 'index.html'; // Redirect to index.html for Google login
-                })
-                .catch((error) => {
-                    displayMessage(`Error: ${error.message}`);
-                });
-        });
-    </script>
-</body>
-</html>
+@@ -0,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+h1 {
+    color: #333;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background: #0056b3;
+}
+#message {
+    margin-top: 10px;
+    color: #e63946;
+}
