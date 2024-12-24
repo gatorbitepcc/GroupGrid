@@ -89,7 +89,7 @@ nav ul li a {
 nav ul li a:hover {
     color: #f0c674; /* Yellow hover */
 }
-/* Header -Buttons(I made them-dabee)i wanna eat im hungry*/
+/* Header -Buttons(I made them-da bee)i wanna eat im hungry*/
 .nav-buttons {
     display: flex;            /* Align buttons in a row */
     gap: 20px;                /* Space between the buttons */
@@ -103,7 +103,6 @@ nav ul li a:hover {
 
 /* Style the individual buttons */
 .nav-buttons button {
-    
     background-color: #ffffff; /* white background for buttons */
     color: rgb(94, 109, 208);              /* blue text */
     padding: 10px 20px;        /* Padding inside the button */
@@ -122,6 +121,51 @@ nav ul li a:hover {
     color: #fff;
 }
 
+.dropdownBtn {
+    position: relative; /* Anchor dropdown menu to this button */
+}
+
+.dropdownBtn button {
+    background-color: #ffffff; /* White background for button */
+    color: rgb(94, 109, 208); /* Blue text */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove default button border */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Pointer on hover */
+    outline: 2px solid rgb(94, 109, 208);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 2; /* Ensure button appears above other elements */
+}
+
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute; /* Position relative to the button */
+    top: 100%; /* Align menu directly below button */
+    left: 0; /* Align with button's left edge */
+    background-color: rgb(195, 203, 255); /* White background for menu */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Dropdown shadow */
+    padding: 10px;
+    z-index: 1; /* Ensure menu appears above other content */
+    min-width: 160px; /* Set menu width */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px;
+}
+
+.dropdown-menu a {
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Full-width clickable area */
+    padding: 8px 12px; /* Spacing inside items */
+}
+
+.dropdown-menu a:hover {
+    background-color: hsl(0, 0%, 90%); /* Light gray hover */
+}
+
+.dropdownBtn:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
 
 
 /* Hero Section */
