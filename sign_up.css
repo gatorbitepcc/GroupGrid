@@ -1,45 +1,143 @@
-@@ -0,0 +1,52 @@
-.body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f9;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    font-family: "Poppins", serif;
+    background: #fff;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Keeps everything centered horizontally */
     height: 100vh;
     margin: 0;
 }
+
+
+
 .container {
     background: white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 50px;
+    width: 440px; /* Consistent container width */
+    height: 640px; /* Fixed height */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; /* Space between elements */
+    margin-top: -100px; /* Move upwards */
 }
+
+.header {
+    text-align: center; /* Center-align everything */
+    margin-bottom: 30px; /* Space between header and form-container */
+}
+
+.logo {
+    width: 150px; /* Adjust logo size */
+    margin: 0; /* Remove any default margin */
+    display: block; /* Ensure block-level alignment */
+}
+
 h1 {
-    color: #333;
-    font-family: "Poppins", serif;
+    margin: 5px 0; /* Small space below the logo */
+    font-size: 1.8rem;
+}
+
+.slogan-subtitle {
+    margin: 0; /* Remove space between subtitle and logo */
+    padding: 0; /* Ensure no padding is added */
+    font-size: 1rem;
+    line-height: 1; /* Remove any additional line spacing */
 }
 .form-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
+    width: 100%; /* Match container width */
 }
-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+
+input,
 button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    width: 80%; /* Consistent width across all elements */
+    max-width: 350px; /* Prevent excessive stretching */
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+    margin: 0;
+}
+
+button {
     background: #007bff;
     color: white;
     cursor: pointer;
     font-size: 16px;
+    border: none;
 }
+
+
 button:hover {
     background: #0056b3;
+}
+
+.logo {
+   
+    width: 60px; /* Adjust size of your logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 0px; /* Space between logo and text */
+   
+}
+
+.signup {
+    background: linear-gradient(to right, #3d25c2, #d2406e);
+}
+.section-break_sgn-ggle {
+    font-family: "Poppins", serif;
+    text-align: center; /* Center the text horizontally */
+    margin: 10px auto; /* Reduce spacing above and below */
+    font-size: 1.5rem; /* Adjust text size */
+    width: fit-content; /* Fit to text size */
+    padding: 5px 10px; /* Small padding */
+    line-height: 1; /* Remove extra line spacing */
+    font-weight: 600;
+    color: #000000;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between logo and text */
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #dadce0;
+    border-radius: 5px;
+    background: #fff;
+    color: #3c4043;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.google-btn img {
+    width: 20px; /* Google Logo Size */
+    height: 20px;
+}
+
+
+.google-btn:hover {
+    background: #f7f8f9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.signup:hover {
+    background: linear-gradient(to right, #322686, #892e4a);
 }
 #message {
     margin-top: 10px;
